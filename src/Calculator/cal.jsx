@@ -21,6 +21,9 @@ function Calculator() {
         break;
     }
   };
+  const backspace = () => {
+    setInput(input.slice(0, -1));
+  }
 
   return (
     <div className="container">
@@ -64,18 +67,12 @@ function Calculator() {
                   value="*"
                   onClick={handleClick}
                 >
-                  x
+                  *
                 </button>
               </td>
-              <td>
-                <button
-                  className="btn-operator"
-                  value="."
-                  onClick={handleClick}
-                >
-                  .
-                </button>
-              </td>
+              <tr>
+              <button className="btn-operator" onClick={backspace}>x</button>
+              </tr>
             </tr>
 
             <tr>
@@ -149,7 +146,7 @@ function Calculator() {
                   3
                 </button>
               </td>
-              <td rowspan="2">
+              <td >
                 <button className="btn-equal" value="=" onClick={handleClick}>
                   =
                 </button>
@@ -178,10 +175,19 @@ function Calculator() {
               <td>
                 <button
                   className="btn-operator"
-                  value="("
+                  value=")"
                   onClick={handleClick}
                 >
                   )
+                </button>
+              </td>
+              <td>
+                <button
+                  className="btn-operator"
+                  value="."
+                  onClick={handleClick}
+                >
+                  .
                 </button>
               </td>
             </tr>
